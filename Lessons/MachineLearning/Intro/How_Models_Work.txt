@@ -1,0 +1,14 @@
+TÌNH HUỐNG:
+- Anh họ của bạn đã kiếm được hàng triệu đô la nhờ đầu cơ bất động sản. 
+- Anh ấy đề nghị trở thành đối tác kinh doanh với bạn vì bạn quan tâm đến khoa học dữ liệu. 
+- Anh ấy sẽ cung cấp tiền, còn bạn sẽ cung cấp các mô hình dự đoán giá trị của nhiều ngôi nhà khác nhau.
+
+- Bạn hỏi anh họ mình xem anh ấy đã dự đoán giá bất động sản như thế nào trong quá khứ, và anh ấy nói đó chỉ là trực giác. 
+- Nhưng khi hỏi thêm, anh ấy phát hiện ra rằng anh ấy đã xác định được các mô hình giá từ những ngôi nhà anh ấy đã thấy trước đây, 
+- và anh ấy sử dụng những mô hình đó để dự đoán cho những ngôi nhà mới mà anh ấy đang cân nhắc.
+
+=> Machine Learning:
+- Học máy cũng hoạt động theo cách tương tự. 
+- Chúng ta sẽ bắt đầu với một mô hình gọi là Cây Quyết Định. 
+- Có những mô hình phức tạp hơn đưa ra dự đoán chính xác hơn. 
+- Nhưng cây quyết định rất dễ hiểu và là nền tảng cơ bản cho một số mô hình tốt nhất trong khoa học dữ liệu.
