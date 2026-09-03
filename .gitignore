@@ -1,0 +1,14 @@
+# Bỏ qua môi trường
+.venv/
+venv/
+
+.env
+*.secret
+api_key.py
+
+__pycache__/
+*.pyc
+*.pyo
+
+.vscode/
+.idea/
