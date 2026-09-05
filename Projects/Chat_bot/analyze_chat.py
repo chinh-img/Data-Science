@@ -2,7 +2,7 @@ import json
 import re
 
 # Read json file
-with open("chat_history.json", "r", encoding="utf-8") as file:
+with open("chat_log.json", "r", encoding="utf-8") as file:
     chat_data = json.load(file)
     
 # Sentences count

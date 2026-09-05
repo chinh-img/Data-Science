@@ -1,5 +1,7 @@
 import os
 import requests
+import json
+from datetime import datetime
 from dotenv import load_dotenv
 
 # Load API key
@@ -10,6 +12,7 @@ if not API_KEY:
 
 # Choose model
 MODEL = "inclusionai/ling-3.0-flash-fin:free"
+LOG_FILE = "chat_log.json"
 
 # System prompt
 system_prompt = (
@@ -25,6 +28,14 @@ chat_history = [
     {"role": "assistant", "content": "Dạ vâng, em hiểu rồi ạ."},
 ]
 
+# Danh sách log (có stamp)
+log_data = []
+
+def save_log():
+    with open(LOG_FILE, "w", encoding="utf-8") as file:
+        json.dump(log_data, file, ensure_ascii=False, indent=2)
+    print(f"\nĐã lưu log vào {LOG_FILE}")
+
 print("Bot chị Ishimi đã sẵn sàng. Nhập 'exit' để thoát.\n")
 
 # Chat
@@ -32,10 +43,13 @@ while True:
     user_input = input("Bạn: ")
     
     if user_input.lower() == "exit":
-        print("Chị: Thôi, hôm nay đến đây tới đây nhé. Về ngủ sớm đi nhóc!")
+        save_log()
+        print("Chị: Tạm biệt, mai gặp lại nha!")
         break
     
     # Add user's text to history
+    user_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    log_data.append({"role": "user", "content": user_input, "time": user_time})
     chat_history.append({"role": "user", "content": user_input})
     
     # Give all chat history to AI
@@ -60,6 +74,8 @@ while True:
         ai_reply = f"Lỗi {response.status_code}: {response.text}"
     
     # Add chat's msg to history
+    ai_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    log_data.append({"role": "assistant", "content": ai_reply, "time": ai_time})
     chat_history.append({"role": "assistant", "content": ai_reply})
     
     # Print results
