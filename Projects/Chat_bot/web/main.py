@@ -16,7 +16,7 @@ load_dotenv()
 API_KEY = os.getenv("OPENROUTER_API_KEY")
 
 # Select Model
-MODEL = "inclusionai/ling-3.0-flash-fin:free"
+MODEL = "recursive/flint-v1.0:free"
 
 app = FastAPI(title="Ishimi Chatbot")
 app.add_middleware(
